@@ -1,6 +1,6 @@
 # Load Data
 
-atafile <- "household_power_consumption.txt"
+datafile <- "household_power_consumption.txt"
 source('readdata.R')
 library(data.table)
 data <- readdata(datafile)
