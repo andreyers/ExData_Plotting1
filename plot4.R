@@ -3,12 +3,15 @@
 datafile <- "household_power_consumption.txt"
 source('readdata.R')
 library(data.table)
-data <- readdata(datafile)
+data <- readdata(datafile, startdate = "2007-02-01", enddate ="2007-02-02")
 
 # Plot 4
 
+# Open PNG file
 png("plot4.png", width=480, height=480)
 par(mfrow=c(2,2))
+
+# Plotting Specs
 
 # Subplot 1,1
 # See plot2.R - A line plot of Global Active Power over time (Thurs & Fri)
@@ -62,6 +65,7 @@ plot(  data[, dateTime]
      , ylab="Global_reactive_power"
      )
 
+# Close PNG file
 dev.off()
 
 # clean up environment as needed
